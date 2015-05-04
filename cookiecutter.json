@@ -1,0 +1,12 @@
+{
+    "project_name": "Invenio FunGenerator",
+    "project_shortname": "{{ cookiecutter.project_name | lower | replace(' ', '-') }}",
+    "package_name": "{{ cookiecutter.project_shortname | replace('-', '_') }}",
+    "github_repo": "inveniosoftware/{{ cookiecutter.project_shortname  }}",
+    "description": "Invenio modul that adds more fun to the platform.",
+    "author_name": "Alabanana Tree",
+    "author_email": "alabanana.tree@farm.foo",
+    "year": "2015",
+    "copyright_holder": "{{ cookiecutter.author_name }} Free Software Group",
+    "copyright_by_intergovernmental": true
+}
