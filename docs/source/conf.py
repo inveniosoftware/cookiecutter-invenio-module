@@ -62,8 +62,8 @@ master_doc = 'index'
 
 # General information about the project.
 project = u'Cookiecutter - Invenio Module Template'
-copyright = u'2015, CERN'
-author = u'Marco Neumann'
+copyright = u'2015 CERN'
+author = u'Invenio Software Collaboration'
 
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the
@@ -248,7 +248,7 @@ latex_elements = {
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
   (master_doc, 'cookiecutter-invenio-module.tex', u'cookiecutter-invenio-module Documentation',
-   u'Marco Neumann', 'manual'),
+   u'Invenio Software Collaboration', 'manual'),
 ]
 
 # The name of an image file (relative to this directory) to place at the top of

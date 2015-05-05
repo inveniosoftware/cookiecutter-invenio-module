@@ -2,11 +2,11 @@
 Cookiecutter - Invenio Module Template
 ======================================
 
-.. image:: https://img.shields.io/github/tag/crepererum/cookiecutter-invenio-module.svg
-        :target: https://github.com/crepererum/cookiecutter-invenio-module/releases
+.. image:: https://img.shields.io/github/tag/inveniosoftware/cookiecutter-invenio-module.svg
+        :target: https://github.com/inveniosoftware/cookiecutter-invenio-module/releases
 
-.. image:: https://img.shields.io/github/license/crepererum/cookiecutter-invenio-module.svg
-        :target: https://github.com/crepererum/cookiecutter-invenio-module/blob/master/LICENSE
+.. image:: https://img.shields.io/github/license/inveniosoftware/cookiecutter-invenio-module.svg
+        :target: https://github.com/inveniosoftware/cookiecutter-invenio-module/blob/master/LICENSE
 
 This `Cookiecutter <https://github.com/audreyr/cookiecutter>`_ template is
 designed to help you to bootstrap modules for `Invenio
