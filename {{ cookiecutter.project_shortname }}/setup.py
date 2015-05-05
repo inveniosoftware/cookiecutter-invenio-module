@@ -11,16 +11,16 @@ readme = open('README.rst').read()
 history = open('CHANGES.rst').read()
 
 requirements = [
-    'Flask',
-    'six',
-    'Invenio',
+    'Flask>=0.10.1',
+    'six>=1.7.2',
+    'Invenio>=2.0.3',
 ]
 
 test_requirements = [
-    'pytest',
-    'pytest-cov',
-    'pytest-pep8',
-    'coverage',
+    'pytest>=2.7.0',
+    'pytest-cov>=1.8.0',
+    'pytest-pep8>=1.0.6',
+    'coverage>=3.7.1',
 ]
 
 
@@ -82,9 +82,10 @@ setup(
     install_requires=requirements,
     extras_require={
         'docs': [
-            'Sphinx',
-            'sphinx_rtd_theme'
+            'Sphinx>=1.3',
+            'sphinx_rtd_theme>=0.1.7'
         ],
+        'tests': test_requirements
     },
     classifiers=[
         'Environment :: Web Environment',

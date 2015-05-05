@@ -2,6 +2,9 @@
 Cookiecutter - Invenio Module Template
 ======================================
 
+.. image:: https://img.shields.io/travis/inveniosoftware/cookiecutter-invenio-module.svg
+        :target: https://travis-ci.org/inveniosoftware/cookiecutter-invenio-module
+
 .. image:: https://img.shields.io/github/tag/inveniosoftware/cookiecutter-invenio-module.svg
         :target: https://github.com/inveniosoftware/cookiecutter-invenio-module/releases
 
