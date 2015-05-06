@@ -51,7 +51,8 @@ def parse_set(string):
 def minver_error(pkg_name):
     """Report error about missing minimum version constraint and exit."""
     print(
-        "ERROR: specify minimal version of '{}' using '>=' or '=='".format(pkg_name),
+        'ERROR: specify minimal version of "{}" using '
+        '">=" or "=="'.format(pkg_name),
         file=sys.stderr
     )
     sys.exit(1)
@@ -71,14 +72,14 @@ def parse_pip_file(path):
                 line = line.strip()
 
                 # see https://pip.readthedocs.org/en/1.1/requirements.html
-                if line.startswith("-e"):
+                if line.startswith('-e'):
                     # devel requirement
-                    splitted = line.split("#egg=")
+                    splitted = line.split('#egg=')
                     rdev[splitted[1].lower()] = line
 
-                elif line.startswith("-r"):
+                elif line.startswith('-r'):
                     # recursive file command
-                    splitted = re.split("-r\\s+", line)
+                    splitted = re.split('-r\\s+', line)
                     subrdev, subrnormal, substuff = parse_pip_file(splitted[1])
                     for k, v in subrdev.iteritems():
                         if k not in rdev:
@@ -86,7 +87,7 @@ def parse_pip_file(path):
                     rnormal.extend(subrnormal)
                     result.extend(substuff)
 
-                elif line.startswith("-"):
+                elif line.startswith('-'):
                     # another special command we don't recognize
                     stuff.append(line)
 
@@ -95,7 +96,7 @@ def parse_pip_file(path):
                     rnormal.append(line)
     except IOError:
         print(
-            "Warning: could not parse requirements file '{}'!",
+            'Warning: could not parse requirements file "{}"!',
             file=sys.stderr
         )
 
@@ -103,23 +104,23 @@ def parse_pip_file(path):
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(
-        description="Calculates requirements for different purposes",
+        description='Calculates requirements for different purposes',
         formatter_class=argparse.ArgumentDefaultsHelpFormatter
     )
     parser.add_argument(
-        "-l", "--level",
-        choices=["min", "pypi", "dev"],
-        default="pypi",
-        help="Specifies desired requirements level."
-             "'min' requests the minimal requirement that is specified, "
-             "'pypi' requests the maximum version that satisfies the "
-             "constrains and is available in PyPi. "
-             "'dev' includes experimental developer versions for VCSs."
+        '-l', '--level',
+        choices=['min', 'pypi', 'dev'],
+        default='pypi',
+        help='Specifies desired requirements level.'
+             '"min" requests the minimal requirement that is specified, '
+             '"pypi" requests the maximum version that satisfies the '
+             'constrains and is available in PyPi. '
+             '"dev" includes experimental developer versions for VCSs.'
     )
     parser.add_argument(
-        "-e", "--extras",
-        default="",
-        help="Comma separated list of extras.",
+        '-e', '--extras',
+        default='',
+        help='Comma separated list of extras.',
         type=parse_set
     )
     args = parser.parse_args()
@@ -127,8 +128,8 @@ if __name__ == '__main__':
     result = dict()
     requires = []
     stuff = []
-    if args.level == "dev":
-        result, requires, stuff = parse_pip_file("requirements-devel.txt")
+    if args.level == 'dev':
+        result, requires, stuff = parse_pip_file('requirements-devel.txt')
 
     with mock.patch.object(setuptools, 'setup') as mock_setup:
         import setup
@@ -150,31 +151,35 @@ if __name__ == '__main__':
             continue
 
         specs = dict(pkg.specs)
-        if ((">=" in specs) and (">" in specs)) \
-                or (("<=" in specs) and ("<" in specs)):
+        if (('>=' in specs) and ('>' in specs)) \
+                or (('<=' in specs) and ('<' in specs)):
             print(
-                "ERROR: Do not specify such weird constraints! ('{}')".format(pkg),
+                'ERROR: Do not specify such weird constraints! '
+                '("{}")'.format(pkg),
                 file=sys.stderr
             )
             sys.exit(1)
 
         if '==' in specs:
-            result[pkg.key] = "{}=={}".format(pkg.project_name, specs['=='])
+            result[pkg.key] = '{}=={}'.format(pkg.project_name, specs['=='])
 
         elif '>=' in specs:
-            if args.level == "min":
-                result[pkg.key] = "{}=={}".format(pkg.project_name, specs['>='])
+            if args.level == 'min':
+                result[pkg.key] = '{}=={}'.format(
+                    pkg.project_name,
+                    specs['>=']
+                )
             else:
                 result[pkg.key] = pkg
 
         elif '>' in specs:
-            if args.level == "min":
+            if args.level == 'min':
                 minver_error(pkg.project_name)
             else:
                 result[pkg.key] = pkg
 
         else:
-            if args.level == "min":
+            if args.level == 'min':
                 minver_error(pkg.project_name)
             else:
                 result[pkg.key] = pkg
