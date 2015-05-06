@@ -19,7 +19,8 @@ features:
   `CHANGES` file.
 - **License:** `GPL 2 <https://www.gnu.org/licenses/gpl-2.0.html>`_ file and
   headers. Headers optionally include a special paragraph for
-  Intergovernmental Organizations like CERN.
+  Intergovernmental Organizations like CERN. Provides these headers as
+  reusable files for Python and reStructuredText.
 - **Installation:** Installation script written as `setup.py` and a
   requirements calculator for different levels (`min`, `pypi`, `dev`).
 - **Tests:** Test setup using `pytest <http://pytest.org/latest/>`_ and
@@ -61,4 +62,8 @@ To generate correct files, please provide the following input to Cookiecutter:
 `copyright_by_intergovernmental` Boolean flag that indicates that the
                                  copyright holder is an Intergovernmental
                                  Organization.
+`superproject`                   Project that contains the newly created
+                                 Invenio module, or, in other words, the
+                                 super project of this module, e.g. Invenio
+                                 itself.
 ================================ =============================================

@@ -8,5 +8,6 @@
     "author_email": "alabanana.tree@farm.foo",
     "year": "2015",
     "copyright_holder": "{{ cookiecutter.author_name }} Free Software Group",
-    "copyright_by_intergovernmental": true
+    "copyright_by_intergovernmental": true,
+    "superproject": "Invenio"
 }
