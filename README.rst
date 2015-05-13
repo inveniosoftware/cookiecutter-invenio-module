@@ -32,7 +32,8 @@ features:
   which tests all three requirement levels and adds coverage tests using
   `Coveralls <https://coveralls.io/>`_.
 - **Your toolchain:** Ignores a decent set of files when working with GIT and
-  `Docker <https://www.docker.com/>`_.
+  `Docker <https://www.docker.com/>`_. Gets your editor to adapt project
+  guidelines by providing a `EditorConfig <http://editorconfig.org/>`_ file.
 
 Configuration
 -------------
