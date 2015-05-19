@@ -8,8 +8,8 @@ import shlex
 # If extensions (or modules to document with autodoc) are in another directory,
 # add these directories to sys.path here. If the directory is relative to the
 # documentation root, use os.path.abspath to make it absolute, like shown here.
-sys.path.insert(0, os.path.abspath(os.path.join('..', '..')))
-sys.path.insert(0, os.path.abspath(os.path.join('_ext')))
+sys.path.insert(0, os.path.abspath('..'))
+sys.path.insert(0, os.path.abspath('_ext'))
 
 import ultramock
 ultramock.activate()
@@ -51,8 +51,13 @@ author = u'{{ cookiecutter.author_name }}'
 # built documents.
 #
 # The short X.Y version.
-import {{ cookiecutter.package_name }}.version
-version = {{ cookiecutter.package_name }}.version.__version__
+
+# Get the version string. Cannot be done with import!
+g = {}
+with open(os.path.join('..', '{{ cookiecutter.package_name }}', 'version.py'), 'rt') as fp:
+    exec(fp.read(), g)
+    version = g['__version__']
+
 # The full version, including alpha/beta/rc tags.
 release = version
 

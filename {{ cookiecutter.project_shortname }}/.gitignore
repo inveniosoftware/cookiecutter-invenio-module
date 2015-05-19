@@ -13,4 +13,4 @@ __pycache__
 .tox
 
 # doc
-docs/build
+docs/_build

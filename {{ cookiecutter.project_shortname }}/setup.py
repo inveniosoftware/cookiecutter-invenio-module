@@ -57,7 +57,7 @@ class PyTest(TestCommand):
         errno = pytest.main(self.pytest_args)
         sys.exit(errno)
 
-# Get the version string.  Cannot be done with import!
+# Get the version string. Cannot be done with import!
 g = {}
 with open(os.path.join('{{ cookiecutter.package_name }}', 'version.py'), 'rt') as fp:
     exec(fp.read(), g)
