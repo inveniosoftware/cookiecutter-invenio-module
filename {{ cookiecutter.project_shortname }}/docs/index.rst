@@ -1,5 +1,5 @@
 {% include 'misc/header.rst' %}
-.. include:: ../../README.rst
+.. include:: ../README.rst
 
 Contents:
 =========

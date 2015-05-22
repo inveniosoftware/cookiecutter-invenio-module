@@ -20,7 +20,7 @@
     granted to it by virtue of its status as an Intergovernmental Organization
     or submit itself to any jurisdiction.
 
-.. include:: ../../README.rst
+.. include:: ../README.rst
 
 Indices and tables
 ==================
