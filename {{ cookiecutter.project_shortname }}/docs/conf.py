@@ -54,7 +54,7 @@ author = u'{{ cookiecutter.author_name }}'
 
 # Get the version string. Cannot be done with import!
 g = {}
-with open(os.path.join('..', '{{ cookiecutter.package_name }}', 'version.py'), 'rt') as fp:
+with open(os.path.join('..', 'invenio', 'modules', '{{ cookiecutter.module_name }}', 'version.py'), 'rt') as fp:
     exec(fp.read(), g)
     version = g['__version__']
 
