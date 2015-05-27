@@ -59,7 +59,7 @@ class PyTest(TestCommand):
 
 # Get the version string. Cannot be done with import!
 g = {}
-with open(os.path.join('{{ cookiecutter.package_name }}', 'version.py'), 'rt') as fp:
+with open(os.path.join('invenio', 'modules', '{{ cookiecutter.module_name }}', 'version.py'), 'rt') as fp:
     exec(fp.read(), g)
     version = g['__version__']
 
@@ -74,7 +74,10 @@ setup(
     author_email='{{ cookiecutter.author_email }}',
     url='https://github.com/{{ cookiecutter.github_repo }}',
     packages=[
-        '{{ cookiecutter.package_name }}',
+        'invenio.modules.{{ cookiecutter.module_name }}',
+    ],
+    namespace_packages = [
+        'invenio.modules',
     ],
     zip_safe=False,
     include_package_data=True,

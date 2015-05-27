@@ -47,9 +47,9 @@ To generate correct files, please provide the following input to Cookiecutter:
 `project_name`                   Full project name, might contain spaces.
 `project_shortname`              Project shortname, no spaces allowed, use `-`
                                  as a separator.
-`package_name`                   Package/Module name for Python, must follow
-                                 `PEP 0008 <https://www.python.org/dev/peps/
-                                 pep-0008/>`_.
+`module_name`                    Module name for Python, must follow `PEP 0008
+                                 <https://www.python.org/dev/peps/pep-0008/>`_
+                                 . Gets prefixed with `invenio.modules`.
 `github_repo`                    GitHub repository of the project in form of
                                  `USER/REPO`, not the full GitHub URL.
 `description`                    A short description of the functionality of
