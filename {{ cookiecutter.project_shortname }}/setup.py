@@ -64,7 +64,7 @@ with open(os.path.join('{{ cookiecutter.package_name }}', 'version.py'), 'rt') a
     version = g['__version__']
 
 setup(
-    name='{{ cookiecutter.project_name }}',
+    name='{{ cookiecutter.project_shortname }}',
     version=version,
     description=__doc__,
     long_description=readme + '\n\n' + history,
