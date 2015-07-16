@@ -1,0 +1,29 @@
+include *.py
+include *.rst
+include *.txt
+include LICENSE
+include babel.ini
+include pytest.ini
+include requirements*.txt
+
+exclude *.yml
+exclude .editorconfig
+exclude .dockerignore
+exclude .travis.yml
+exclude Dockerfile
+exclude tox.ini
+
+recursive-exclude * *.py[co]
+
+recursive-include docs *
+recursive-include {{ cookiecutter.package_name }} *.cfg
+recursive-include {{ cookiecutter.package_name }} *.po
+recursive-include {{ cookiecutter.package_name }} *.pot
+recursive-include {{ cookiecutter.package_name }} *.py
+
+prune examples
+prune misc
+prune tests
+prune docs/_build
+
+# TODO check for completeness
