@@ -4,10 +4,10 @@
     "package_name": "{{ cookiecutter.project_shortname | replace('-', '_') }}",
     "github_repo": "inveniosoftware/{{ cookiecutter.project_shortname  }}",
     "description": "Invenio module that adds more fun to the platform.",
-    "author_name": "Alabanana Tree",
-    "author_email": "alabanana.tree@farm.foo",
+    "author_name": "CERN",
+    "author_email": "info@invenio-software.org",
     "year": "2015",
-    "copyright_holder": "{{ cookiecutter.author_name }} Free Software Group",
+    "copyright_holder": "{{ cookiecutter.author_name }}",
     "copyright_by_intergovernmental": true,
     "superproject": "Invenio"
 }
