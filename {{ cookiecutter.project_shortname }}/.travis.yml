@@ -32,6 +32,8 @@ services:
 
 language: python
 
+sudo: false
+
 cache:
   - apt
   - pip
@@ -45,8 +47,6 @@ python:
   - "2.7"
 
 before_install:
-  - "sudo apt-get update"
-  - "sudo apt-get install python-dev"
   - "travis_retry pip install --upgrade pip"
   - "travis_retry pip install mock check-manifest"
   - "python requirements.py --extras=$REXTRAS --level=min > .travis-lowest-requirements.txt"
@@ -55,8 +55,8 @@ before_install:
 
 install:
   - "travis_retry pip install unittest2"
-  - "travis_retry pip install -r .travis-$REQUIREMENTS-requirements.txt --allow-all-external --quiet"
-  - "travis_retry pip install -e .[$REXTRAS] --quiet --process-dependency-links"
+  - "travis_retry pip install -r .travis-$REQUIREMENTS-requirements.txt --allow-all-external"
+  - "travis_retry pip install -e .[$REXTRAS] --process-dependency-links"
 
 before_script:
   - "inveniomanage database init --yes-i-know || echo ':('"
