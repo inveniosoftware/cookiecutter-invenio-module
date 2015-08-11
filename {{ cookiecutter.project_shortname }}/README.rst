@@ -1,7 +1,7 @@
 {% include 'misc/header.rst' %}
-======================================
-{{ cookiecutter.project_name }}
-======================================
+{{ '=' * (cookiecutter.project_name|length + 2) }}
+ {{ cookiecutter.project_name }}
+{{ '=' * (cookiecutter.project_name|length + 2) }}
 
 .. image:: https://img.shields.io/travis/{{ cookiecutter.github_repo }}.svg
         :target: https://travis-ci.org/{{ cookiecutter.github_repo }}
@@ -21,11 +21,7 @@
 
 {{ cookiecutter.description }}
 
+*This is an experimental development preview release.*
+
 * Free software: GPLv2 license
 * Documentation: https://{{ cookiecutter.project_shortname }}.readthedocs.org.
-
-Features
-========
-
-- TODO
-- TODO
