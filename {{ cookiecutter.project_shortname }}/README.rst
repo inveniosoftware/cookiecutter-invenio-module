@@ -21,7 +21,7 @@
 
 {{ cookiecutter.description }}
 
-*This is an experimental development preview release.*
+*This is an experimental developer preview release.*
 
 * Free software: GPLv2 license
 * Documentation: https://{{ cookiecutter.project_shortname }}.readthedocs.org.

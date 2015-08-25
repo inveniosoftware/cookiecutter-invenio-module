@@ -9,7 +9,7 @@ About
 
 {{ cookiecutter.description }}
 
-*This is an experimental development preview release.*
+*This is an experimental developer preview release.*
 
 What's new
 ----------
