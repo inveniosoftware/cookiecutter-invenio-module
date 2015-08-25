@@ -1,0 +1,7 @@
+components:
+- docs
+- global
+- installation
+- skeleton
+- tests
+- travis
