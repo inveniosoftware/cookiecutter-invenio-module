@@ -13,11 +13,10 @@ history = open('CHANGES.rst').read()
 requirements = [
     'Flask>=0.10.1',
     'six>=1.7.2',
-    'Invenio>=2.0.3',
 ]
 
 test_requirements = [
-    'pytest>=2.7.0',
+    'pytest>=2.8.0',
     'pytest-cov>=1.8.0',
     'pytest-pep8>=1.0.6',
     'coverage>=3.7.1',
@@ -38,7 +37,7 @@ class PyTest(TestCommand):
         except ImportError:
             from configparser import ConfigParser
         config = ConfigParser()
-        config.read('pytest.ini')
+        config.read('setup.cfg')
         self.pytest_args = config.get('pytest', 'addopts').split(' ')
 
     def finalize_options(self):
@@ -53,7 +52,7 @@ class PyTest(TestCommand):
         import pytest
         import _pytest.config
         pm = _pytest.config.get_plugin_manager()
-        pm.consider_setuptools_entrypoints()
+        pm.load_setuptools_entrypoints('pytest11')
         errno = pytest.main(self.pytest_args)
         sys.exit(errno)
 
