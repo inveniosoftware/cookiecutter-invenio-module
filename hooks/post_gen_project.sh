@@ -1,5 +1,7 @@
 #!/usr/bin/env sh
 
+chmod a+x run-tests.sh
+
 echo "-------------------------------------------------------------------------------"
 echo
 echo "Skeleton generated."

@@ -24,7 +24,7 @@ Installation
 Documentation
 -------------
 
-   http://{{ cookiecutter.project_shortname }}.readthedocs.org/en/v0.1.0
+   http://pythonhosted.org/{{ cookiecutter.project_shortname }}/
 
 Happy hacking and thanks for flying {{ cookiecutter.project_name }}.
 

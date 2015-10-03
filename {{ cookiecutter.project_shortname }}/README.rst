@@ -24,4 +24,4 @@
 *This is an experimental developer preview release.*
 
 * Free software: GPLv2 license
-* Documentation: https://{{ cookiecutter.project_shortname }}.readthedocs.org.
+* Documentation: https://pythonhosted.org/{{ cookiecutter.project_shortname }}/
