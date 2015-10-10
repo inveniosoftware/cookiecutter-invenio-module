@@ -1,0 +1,6 @@
+{{'{%- extends config.'}}{{cookiecutter.config_prefix}}{{'_BASE_TEMPLATE %}'}}
+{% raw %}
+{%- block page_body %}
+{{_('Welcome to %(module_name)s', module_name=module_name)}}
+{%- endblock %}
+{% endraw %}

@@ -10,3 +10,4 @@
 # Check manifest will not automatically add these two files:
 include .dockerignore
 include .editorconfig
+include .tx/config

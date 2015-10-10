@@ -3,6 +3,7 @@
 
 from __future__ import absolute_import, print_function
 
+from .ext import {{ cookiecutter.extension_class }}
 from .version import __version__
 
-__all__ = ('__version__', )
+__all__ = ('__version__', '{{ cookiecutter.extension_class }}')

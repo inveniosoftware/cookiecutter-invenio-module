@@ -1,5 +1,5 @@
 {
-    "project_name": "Invenio FunGenerator",
+    "project_name": "Invenio-FunGenerator",
     "project_shortname": "{{ cookiecutter.project_name | lower | replace(' ', '-') }}",
     "package_name": "{{ cookiecutter.project_shortname | replace('-', '_') }}",
     "github_repo": "inveniosoftware/{{ cookiecutter.project_shortname  }}",
@@ -9,5 +9,9 @@
     "year": "2015",
     "copyright_holder": "{{ cookiecutter.author_name }}",
     "copyright_by_intergovernmental": true,
-    "superproject": "Invenio"
+    "superproject": "Invenio",
+    "transifex_project": "{{ cookiecutter.project_shortname }}",
+    "extension_class": "{{ cookiecutter.project_name | replace('-', '') | replace(' ', '') }}",
+    "config_prefix": "{{ cookiecutter.project_name | replace('Invenio-', '') | replace('-', '_') | upper }}"
+
 }
