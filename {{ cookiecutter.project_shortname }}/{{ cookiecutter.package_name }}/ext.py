@@ -9,6 +9,7 @@ from .views import blueprint
 
 
 class {{ cookiecutter.extension_class }}(object):
+
     """{{ cookiecutter.project_name}} extension."""
 
     def __init__(self, app=None):
