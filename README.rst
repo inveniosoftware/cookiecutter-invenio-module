@@ -32,7 +32,7 @@ features:
   <http://sphinx-doc.org/>`_. Also includes all files required for `Read the
   Docs <https://readthedocs.org/>`_. Mocking module to simulate not-installed
   requirements for faster documentation building.
-- **Continues Integration:** Support for `Travis <https://travis-ci.org/>`_
+- **Continuous integration:** Support for `Travis <https://travis-ci.org/>`_
   which tests all three requirement levels and adds coverage tests using
   `Coveralls <https://coveralls.io/>`_.
 - **Your toolchain:** Ignores a decent set of files when working with GIT and
