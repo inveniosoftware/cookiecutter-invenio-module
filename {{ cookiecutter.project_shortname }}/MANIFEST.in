@@ -11,5 +11,4 @@
 include .dockerignore
 include .editorconfig
 include .tx/config
-recursive-include {{ cookiecutter.package_name }} *.po
-recursive-include {{ cookiecutter.package_name }} *.mo
+recursive-include {{ cookiecutter.package_name }} *.po *.pot *.mo
