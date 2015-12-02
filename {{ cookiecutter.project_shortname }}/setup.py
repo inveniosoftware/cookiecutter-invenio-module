@@ -96,7 +96,25 @@ setup(
     zip_safe=False,
     include_package_data=True,
     platforms='any',
-    entry_points={},
+    entry_points={
+        'invenio_base.apps': [
+            '{{ cookiecutter.package_name }} = {{ cookiecutter.package_name }}:{{ cookiecutter.extension_class }}',
+        ],
+        'invenio_i18n.translations': [
+            'messages = {{ cookiecutter.package_name }}',
+        ],
+        # TODO: Edit these entry points to fit your needs.
+        # 'invenio_access.actions': [],
+        # 'invenio_admin.actions': [],
+        # 'invenio_assets.bundles': [],
+        # 'invenio_base.api_apps': [],
+        # 'invenio_base.api_blueprints': [],
+        # 'invenio_base.blueprints': [],
+        # 'invenio_celery.tasks': [],
+        # 'invenio_db.models': [],
+        # 'invenio_pidstore.minters': [],
+        # 'invenio_records.jsonresolver': [],
+    },
     extras_require=extras_require,
     install_requires=install_requires,
     setup_requires=setup_requires,
