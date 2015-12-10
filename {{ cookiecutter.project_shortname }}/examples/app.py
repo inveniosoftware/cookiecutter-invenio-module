@@ -7,7 +7,7 @@ Run example development server:
 .. code-block:: console
 
    $ cd examples
-   $ python app.py
+   $ flask -a app.py --debug run
 """
 
 from __future__ import absolute_import, print_function
@@ -21,6 +21,3 @@ from {{ cookiecutter.package_name }} import {{ cookiecutter.extension_class }}
 app = Flask(__name__)
 Babel(app)
 {{ cookiecutter.extension_class }}(app)
-
-if __name__ == "__main__":
-    app.run()
