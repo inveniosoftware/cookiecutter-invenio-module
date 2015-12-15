@@ -1,7 +1,6 @@
 {% include 'misc/header.rst' %}
 
-=======
- Usage
-=======
+Usage
+=====
 
 .. automodule:: {{ cookiecutter.package_name }}
