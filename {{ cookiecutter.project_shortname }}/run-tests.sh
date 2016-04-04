@@ -1,3 +1,4 @@
+#!/usr/bin/env sh
 {% include 'misc/header.py' %}
 
 pydocstyle {{ cookiecutter.package_name }} && \
