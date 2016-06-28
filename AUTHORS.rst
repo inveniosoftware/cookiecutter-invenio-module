@@ -10,8 +10,14 @@ Contact us at `info@inveniosoftware.org <mailto:info@inveniosoftware.org>`_
 Contributors
 ^^^^^^^^^^^^
 
-* Javier Martin Montull <javier.martin.montull@cern.ch>
-* Jiri Kuncar <jiri.kuncar@cern.ch>
-* Marco Neumann <marco@crepererum.net>
-* Samuele Kaplun <Samuele.Kaplun@cern.ch>
-* Tibor Simko <tibor.simko@cern.ch>
+- Bruno Cuc <bruno.cuc@cern.ch>
+- Javier Delgado <javier.delgado.fernandez@cern.ch>
+- Javier Martin Montull <javier.martin.montull@cern.ch>
+- Jiri Kuncar <jiri.kuncar@cern.ch>
+- Lars Holm Nielsen <lars.holm.nielsen@cern.ch>
+- Leonardo Rossi <leonardo.r@cern.ch>
+- Marco Neumann <marco@crepererum.net>
+- Nikos Filippakis <nikolaos.filippakis@cern.ch>
+- Sami Hiltunen <sami.mikael.hiltunen@cern.ch>
+- Samuele Kaplun <Samuele.Kaplun@cern.ch>
+- Tibor Simko <tibor.simko@cern.ch>
