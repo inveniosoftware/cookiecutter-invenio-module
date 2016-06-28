@@ -5,7 +5,7 @@
     "github_repo": "inveniosoftware/{{ cookiecutter.project_shortname  }}",
     "description": "Invenio module that adds more fun to the platform.",
     "author_name": "CERN",
-    "author_email": "info@invenio-software.org",
+    "author_email": "info@inveniosoftware.org",
     "year": "2015",
     "copyright_holder": "{{ cookiecutter.author_name }}",
     "copyright_by_intergovernmental": true,
