@@ -21,4 +21,4 @@ Contributors
 - Sami Hiltunen <sami.mikael.hiltunen@cern.ch>
 - Samuele Kaplun <Samuele.Kaplun@cern.ch>
 - Tibor Simko <tibor.simko@cern.ch>
-- Ivan Masar <helix84@centrum.sk>
+- Ivan Masár <helix84@centrum.sk>
