@@ -69,4 +69,11 @@ To generate correct files, please provide the following input to Cookiecutter:
                                  Invenio module, or, in other words, the
                                  super project of this module, e.g. Invenio
                                  itself.
+`transifex_project`              Name of the project on transifex translation
+                                 platform.
+`extension_class`                Name of the class that will be exported as
+                                 setuptools entrypoint and loaded by invenio
+                                 main app.
+`config_prefix`                  Prefix for the configuration keys that the
+                                 main app will use for this extension.
 ================================ =============================================
