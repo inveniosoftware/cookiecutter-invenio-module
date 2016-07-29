@@ -70,3 +70,41 @@ To generate correct files, please provide the following input to Cookiecutter:
                                  super project of this module, e.g. Invenio
                                  itself.
 ================================ =============================================
+
+Usage example
+-------------
+This example might be deprecated at the time you read it, but it will give you
+a good idea on how to use this template to generate a new project.
+
+Requirements
+============
+You will need to have installed the Cookiecutter tool, we recommend to use a
+virtualenv, specially with virtualenvwrapper to help you around. So assuming
+that you have virtualenvwrapper already installed (remember to add `source
+virtualenvwrapper.sh` to your bashrc and reload the console or source it
+directly after installing it), you can just run::
+
+    $ mkvirtualenv cookiecutter
+    $ pip install --upgrad pip setuptools  # to make sure we have the latest
+    $ pip install cookiecutter
+
+And that will create and setup the virtualenv we will use for the new project
+creation.
+
+
+Create the new python module
+============================
+Creating the new module is as easy as running::
+
+    $ cookiecutter gh:inveniosoftware/cookiecutter-invenio-module
+
+That will start asking you a lot of questions about the module you want to
+create, you can see what each of them mean in the _`Configuration` section.
+
+Start developing
+================
+So now you can start developing your new module, that would have been created
+at `$PWD/nameofyourproject` where `nameofyourproject` is the name of the
+`package_name` that you specified previously.
+
+Enjoy!
