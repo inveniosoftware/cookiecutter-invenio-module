@@ -1,0 +1,58 @@
+{% include 'misc/header.py' %}
+
+version: '2'
+
+services:
+{%- if 'mysql' in cookiecutter.databases %}
+  mysql:
+    image: mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=dbpass123
+      - MYSQL_PASSWORD=dbpass123
+      - MYSQL_USER=workflows
+      - MYSQL_DATABASE=workflows
+
+{%- endif %}
+{%- if 'postgres' in cookiecutter.databases %}
+  postgres:
+    image: postgres
+    environment:
+      - POSTGRES_PASSWORD=dbpass123
+      - POSTGRES_USER=workflows
+      - PGDATA=/var/lib/postgresql/data/pgdata
+
+{%- endif %}
+
+  test-{{cookiecutter.python_versions.split(',')[0]}}:
+    build:
+      context: .
+      dockerfile: tests/Dockerfile.{{cookiecutter.python_versions.split(',')[0]}}:
+    command: tox -r
+    working_dir: /code
+    volumes:
+      - .:/code
+    environment:
+      - TOXENV=pep8,docs,doctests,docstyle,packaging,{{cookiecutter.python_versions.split(',')[0]}}:
+
+{%- for python in cookiecutter.python_versions.split(',') %}
+  {%- for database in cookiecutter.databases.split(',') %}
+    {%- if database == 'sqlite' and loop.index0 != 0 %}
+  test-{{python}}:
+    extends: test-{{cookiecutter.python_versions.split(',')[0]}}
+    build:
+      context: .
+      dockerfile: tests/Dockerfile.{{python}}
+    environment:
+      - TOXENV={{python}}
+
+    {%- else %}
+  test-{{python}}{{database}}:
+    extends: test-{{python}}
+    depends_on:
+      - {{database}}
+    environment:
+      - TOXENV={{python}}{{database}}
+
+    {%- endif %}
+  {%- endfor %}
+{%- endfor %}
