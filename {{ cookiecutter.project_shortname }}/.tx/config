@@ -20,7 +20,7 @@
 [main]
 host = https://www.transifex.com
 
-[{{ cookiecutter.transifex_project }}.messagespot]
+[invenio-1.{{ cookiecutter.transifex_project }}-messages]
 file_filter = {{ cookiecutter.package_name }}/translations/<lang>/LC_MESSAGES/messages.po
 source_file = {{ cookiecutter.package_name }}/translations/messages.pot
 source_lang = en
