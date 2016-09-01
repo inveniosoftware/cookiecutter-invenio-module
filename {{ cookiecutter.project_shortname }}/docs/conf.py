@@ -115,8 +115,8 @@ html_theme_options = {
     'github_banner': True,
     'show_powered_by': False,
     'extra_nav_links': {
-        '{{ cookiecutter.project_shortname }}@GitHub': 'http://github.com/{{ cookiecutter.github_repo }}',
-        '{{ cookiecutter.project_shortname }}@PyPI': 'http://pypi.python.org/pypi/{{ cookiecutter.project_shortname }}/',
+        '{{ cookiecutter.project_shortname }}@GitHub': 'https://github.com/{{ cookiecutter.github_repo }}',
+        '{{ cookiecutter.project_shortname }}@PyPI': 'https://pypi.python.org/pypi/{{ cookiecutter.project_shortname }}/',
     }
 }
 
