@@ -27,10 +27,10 @@ features:
 - **Installation:** Installation script written as `setup.py` and a
   requirements calculator for different levels (`min`, `pypi`, `dev`).
 - **Tests:** Test setup using `pytest <http://pytest.org/latest/>`_ and
-  configuration for `Tox <https://tox.readthedocs.org/en/latest/>`_.
+  configuration for `Tox <https://tox.readthedocs.io/en/latest/>`_.
 - **Documentation:** Documentation generator using `Sphinx
   <http://sphinx-doc.org/>`_. Also includes all files required for `Read the
-  Docs <https://readthedocs.org/>`_. Mocking module to simulate not-installed
+  Docs <https://readthedocs.io/>`_. Mocking module to simulate not-installed
   requirements for faster documentation building.
 - **Continuous integration:** Support for `Travis <https://travis-ci.org/>`_
   which tests all three requirement levels and adds coverage tests using
