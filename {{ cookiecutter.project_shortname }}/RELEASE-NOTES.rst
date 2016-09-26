@@ -24,13 +24,13 @@ Installation
 Documentation
 -------------
 
-   http://pythonhosted.org/{{ cookiecutter.project_shortname }}/
+   https://{{ cookiecutter.project_shortname }}.readthedocs.io/
 
 Happy hacking and thanks for flying {{ cookiecutter.project_name }}.
 
 | Invenio Development Team
 |   Email: info@inveniosoftware.org
 |   IRC: #invenio on irc.freenode.net
-|   Twitter: http://twitter.com/inveniosoftware
+|   Twitter: https://twitter.com/inveniosoftware
 |   GitHub: https://github.com/{{ cookiecutter.github_repo }}
 |   URL: http://inveniosoftware.org
