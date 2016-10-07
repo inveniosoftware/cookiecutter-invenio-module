@@ -2,7 +2,7 @@
 {% include 'misc/header.py' %}
 
 pydocstyle {{ cookiecutter.package_name }} tests && \
-isort -rc -c -df **/*.py && \
+isort -rc -c -df && \
 check-manifest --ignore ".travis-*" && \
 sphinx-build -qnNW docs docs/_build/html && \
 python setup.py test && \
