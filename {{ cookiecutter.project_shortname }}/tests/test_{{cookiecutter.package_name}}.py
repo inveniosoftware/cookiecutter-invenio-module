@@ -4,7 +4,6 @@
 from __future__ import absolute_import, print_function
 
 from flask import Flask
-from flask_babelex import Babel
 
 from {{ cookiecutter.package_name }} import {{ cookiecutter.extension_class }}
 
@@ -30,7 +29,6 @@ def test_init():
 
 def test_view(app):
     """Test view."""
-    Babel(app)
     {{ cookiecutter.extension_class}}(app)
     with app.test_client() as client:
         res = client.get("/")

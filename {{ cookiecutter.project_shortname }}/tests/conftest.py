@@ -3,15 +3,36 @@
 
 from __future__ import absolute_import, print_function
 
+import shutil
+import tempfile
+
 import pytest
 from flask import Flask
+from flask_babelex import Babel
+
+
+@pytest.yield_fixture()
+def instance_path():
+    """Temporary instance path."""
+    path = tempfile.mkdtemp()
+    yield path
+    shutil.rmtree(path)
 
 
 @pytest.fixture()
-def app():
+def base_app(instance_path):
     """Flask application fixture."""
-    app = Flask('testapp')
-    app.config.update(
-        TESTING=True
+    app_ = Flask('testapp', instance_path=instance_path)
+    app_.config.update(
+        SECRET_KEY='SECRET_KEY',
+        TESTING=True,
     )
-    return app
+    Babel(app_)
+    return app_
+
+
+@pytest.yield_fixture()
+def app(base_app):
+    """Flask application fixture."""
+    with base_app.app_context():
+        yield base_app
