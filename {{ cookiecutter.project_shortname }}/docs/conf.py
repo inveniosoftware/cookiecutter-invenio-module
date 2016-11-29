@@ -308,7 +308,11 @@ texinfo_documents = [
 
 
 # Example configuration for intersphinx: refer to the Python standard library.
-intersphinx_mapping = {'https://docs.python.org/': None}
+intersphinx_mapping = {
+    'python': ('https://docs.python.org/', None),
+    # TODO: Configure external documentation references, eg:
+    # 'Flask-Admin': ('https://flask-admin.readthedocs.io/en/latest/', None),
+}
 
 # Autodoc configuraton.
 autoclass_content = 'both'
