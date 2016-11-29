@@ -18,10 +18,11 @@
 .. image:: https://img.shields.io/github/license/{{ cookiecutter.github_repo }}.svg
         :target: https://github.com/{{ cookiecutter.github_repo }}/blob/master/LICENSE
 
-
 {{ cookiecutter.description }}
 
 *This is an experimental developer preview release.*
 
-* Free software: GPLv2 license
-* Documentation: https://{{ cookiecutter.project_shortname }}.readthedocs.io/
+TODO: Please provide feature overview of module
+
+Further documentation is available on
+https://{{ cookiecutter.project_shortname }}.readthedocs.io/
