@@ -12,6 +12,7 @@ This part of the documentation will show you how to get started in using
    :maxdepth: 2
 
    installation
+   configuration
    usage
 
 
