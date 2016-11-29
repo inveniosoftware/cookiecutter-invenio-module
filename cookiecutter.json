@@ -13,5 +13,4 @@
     "transifex_project": "{{ cookiecutter.project_shortname }}",
     "extension_class": "{{ cookiecutter.project_name | replace('-', '') | replace(' ', '') }}",
     "config_prefix": "{{ cookiecutter.project_name | replace('Invenio-', '') | replace('-', '_') | upper }}"
-
 }
