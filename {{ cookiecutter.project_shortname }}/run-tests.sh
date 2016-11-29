@@ -1,6 +1,5 @@
 #!/usr/bin/env sh
 {% include 'misc/header.py' %}
-
 pydocstyle {{ cookiecutter.package_name }} tests && \
 isort -rc -c -df && \
 check-manifest --ignore ".travis-*" && \

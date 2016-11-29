@@ -1,5 +1,4 @@
 {% include 'misc/header.py' %}
-
 root = true
 
 [*]
@@ -16,6 +15,7 @@ indent_size = 4
 known_first_party = {{ cookiecutter.package_name }}
 multi_line_output = 2
 default_section = THIRDPARTY
+skip = .eggs
 
 # RST files (used by sphinx)
 [*.rst]

@@ -1,5 +1,4 @@
 {% include 'misc/header.py' %}
-
 # TODO: Generate this manifest file by running the following commands:
 #
 #  git init
