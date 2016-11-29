@@ -1,5 +1,4 @@
 {% include 'misc/header.py' %}
-
 """Minimal Flask application example for development.
 
 Run example development server:

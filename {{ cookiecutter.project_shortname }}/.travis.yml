@@ -1,5 +1,4 @@
 {% include 'misc/header.py' %}
-
 notifications:
   email: false
 

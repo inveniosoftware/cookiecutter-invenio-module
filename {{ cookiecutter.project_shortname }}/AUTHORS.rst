@@ -1,5 +1,4 @@
 {% include 'misc/header.rst' %}
-
 Authors
 =======
 
