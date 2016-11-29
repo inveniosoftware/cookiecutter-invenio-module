@@ -3,6 +3,11 @@
 API Docs
 ========
 
-{{ cookiecutter.package_name }}
-{{ '-' * (cookiecutter.package_name|length) }}
+.. automodule:: {{ cookiecutter.package_name }}.ext
+   :members:
 
+Views
+-----
+
+.. automodule:: {{ cookiecutter.package_name }}.views
+   :members:
