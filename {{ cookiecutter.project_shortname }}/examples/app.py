@@ -6,9 +6,10 @@ Run example development server:
 .. code-block:: console
 
    $ cd examples
-   $ export FLASK_APP=app.py
-   $ export FLASK_DEBUG=1
-   $ flask run
+   $ ./app-setup.sh
+   $ ./app-fixtures.sh
+   $ FLASK_APP=app.py flask run
+   $ ./app-teardown.sh
 """
 
 from __future__ import absolute_import, print_function
