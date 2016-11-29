@@ -1,4 +1,6 @@
 {% include 'misc/header.py' %}
+"""Sphinx configuration."""
+
 from __future__ import print_function
 
 import os
