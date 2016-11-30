@@ -14,6 +14,7 @@ This part of the documentation will show you how to get started in using
    installation
    configuration
    usage
+   examplesapp
 
 
 API Reference
