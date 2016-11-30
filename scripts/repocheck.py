@@ -113,7 +113,9 @@ def run_in_dir(path, cmd):
 
 def diff_file(src, dst, f):
     """Diff a file in src and dst."""
-    cmd = 'diff {src} {dst}'.format(src=join(src, f), dst=join(dst, f))
+    # Skip the lines containing copyright year in the header license
+    cmd = 'diff -I "Copyright (C) .* CERN." {src} {dst}'.format(
+        src=join(src, f), dst=join(dst, f))
     try:
         subprocess.check_output(cmd, shell=True).decode('utf-8')
         # Exit code 0 means no difference
@@ -126,9 +128,7 @@ def diff_file(src, dst, f):
 
 def equal_content(src, dst, f):
     """Check if file content is equal."""
-    with open(join(src, f), 'r') as src_f:
-        with open(join(dst, f), 'r') as dst_f:
-            return src_f.read() == dst_f.read()
+    return diff_file(src, dst, f) == ""
 
 
 def equal_setuppy_attr(src, dst, attr):
