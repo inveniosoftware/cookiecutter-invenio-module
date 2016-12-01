@@ -62,7 +62,7 @@ diff_files = [
     'CHANGES.rst',
     'docs/conf.py',
     'INSTALL.rst',
-    'invenio_admin/version.py',
+    '{package_name}/version.py',
     'MANIFEST.in',
     'README.rst',
     'RELEASE-NOTES.rst',
@@ -153,6 +153,14 @@ def check_identical_files(src, dst, files):
             click.secho('ERROR: {0}'.format(e))
 
 
+def get_package_name(dst):
+    """Get the package name e.g.: 'invenio-fungenerator'."""
+    with open(join(dst, '.editorconfig'), 'r') as fp:
+        for line in fp.readlines():
+            if line.startswith('known_first_party'):
+                return line.partition(' = ')[-1].partition(',')[0].strip()
+
+
 def diff_similar_files(src, dst, files):
     """Diff files which are supposed to be very similar."""
     for f in files:
@@ -168,7 +176,12 @@ def run(repo_dir, cookiecutter_output_dir):
     """Compare repository against CookieCutter output."""
     click.secho(
         'Please check diff output for almost identical files...', fg='green')
-    diff_similar_files(repo_dir, cookiecutter_output_dir, diff_files)
+
+    # Format the diff files with the package name
+    package_name = get_package_name(cookiecutter_output_dir)
+    f_diff_files = [f.format(package_name=package_name) for f in diff_files]
+
+    diff_similar_files(repo_dir, cookiecutter_output_dir, f_diff_files)
     click.secho('Checking identical files...', fg='green')
     check_identical_files(repo_dir, cookiecutter_output_dir, identical_files)
     click.secho('Please check following files manually:', fg='yellow')
