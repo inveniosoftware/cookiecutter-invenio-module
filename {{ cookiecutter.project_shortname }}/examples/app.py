@@ -6,7 +6,7 @@ fixture data by running:
 
 .. code-block:: console
 
-   $ pip install -e .[all
+   $ pip install -e .[all]
    $ cd examples
    $ ./app-setup.sh
    $ ./app-fixtures.sh
