@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 #
 # This file is part of Cookiecutter - Invenio Module Template
-# Copyright (C) 2016 CERN
+# Copyright (C) 2016, 2017 CERN
 #
 # Cookiecutter - Invenio Module Template is free software; you can
 # redistribute it and/or modify it under the terms of the GNU General Public
