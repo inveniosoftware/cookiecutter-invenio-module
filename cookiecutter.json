@@ -6,7 +6,7 @@
     "description": "Invenio module that adds more fun to the platform.",
     "author_name": "CERN",
     "author_email": "info@inveniosoftware.org",
-    "year": "2016",
+    "year": "2017",
     "copyright_holder": "{{ cookiecutter.author_name }}",
     "copyright_by_intergovernmental": true,
     "superproject": "Invenio",
