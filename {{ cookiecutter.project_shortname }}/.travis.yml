@@ -14,7 +14,7 @@ cache:
 
 env:
   - REQUIREMENTS=lowest
-  - REQUIREMENTS=release
+  - REQUIREMENTS=release DEPLOY=true
   - REQUIREMENTS=devel
 
 python:
@@ -37,3 +37,15 @@ script:
 
 after_success:
   - coveralls
+
+deploy:
+  provider: pypi
+  user: inveniosoftware
+  password:
+    secure: TODO:PYPISECUREHASH
+  distributions: "compile_catalog sdist bdist_wheel"
+  on:
+    tags: true
+    python: "2.7"
+    repo: {{ cookiecutter.github_repo }}
+    condition: $DEPLOY = true
