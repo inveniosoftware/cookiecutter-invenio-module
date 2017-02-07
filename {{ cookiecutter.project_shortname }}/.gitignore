@@ -60,3 +60,6 @@ target/
 
 # Vim swapfiles
 .*.sw?
+
+# OS files
+.DS_Store
