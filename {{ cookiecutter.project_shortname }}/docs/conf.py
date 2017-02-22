@@ -57,7 +57,9 @@ author = u'{{ cookiecutter.author_name }}'
 
 # Get the version string. Cannot be done with import!
 g = {}
-with open(os.path.join('..', '{{ cookiecutter.package_name }}', 'version.py'), 'rt') as fp:
+with open(os.path.join(os.path.dirname(__file__), '..',
+                       '{{ cookiecutter.package_name }}', 'version.py'),
+          'rt') as fp:
     exec(fp.read(), g)
     version = g['__version__']
 
