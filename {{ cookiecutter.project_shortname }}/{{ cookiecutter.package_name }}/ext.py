@@ -5,6 +5,7 @@ from __future__ import absolute_import, print_function
 
 from flask_babelex import gettext as _
 
+from . import config
 from .views import blueprint
 
 
@@ -28,7 +29,12 @@ class {{ cookiecutter.extension_class }}(object):
 
     def init_config(self, app):
         """Initialize configuration."""
-        app.config.setdefault(
-            "{{ cookiecutter.config_prefix}}_BASE_TEMPLATE",
-            app.config.get("BASE_TEMPLATE",
-                           "{{ cookiecutter.package_name}}/base.html"))
+        # Use theme's base template if theme is installed
+        if 'BASE_TEMPLATE' in app.config:
+            app.config.setdefault(
+                '{{ cookiecutter.config_prefix}}_BASE_TEMPLATE',
+                app.config['BASE_TEMPLATE'],
+            )
+        for k in dir(config):
+            if k.startswith('{{ cookiecutter.config_prefix}}_'):
+                app.config.setdefault(k, getattr(config, k))
