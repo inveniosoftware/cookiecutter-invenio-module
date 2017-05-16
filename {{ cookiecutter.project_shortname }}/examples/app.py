@@ -1,6 +1,8 @@
 {% include 'misc/header.py' %}
 """Minimal Flask application example.
 
+SPHINX-START
+
 First install {{cookiecutter.project_name}}, setup the application and load
 fixture data by running:
 
@@ -29,6 +31,8 @@ To reset the example application run:
 .. code-block:: console
 
     $ ./app-teardown.sh
+
+SPHINX-END
 """
 
 from __future__ import absolute_import, print_function
