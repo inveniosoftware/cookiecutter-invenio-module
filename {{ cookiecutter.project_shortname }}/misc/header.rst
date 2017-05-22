@@ -13,9 +13,7 @@
     General Public License for more details.
 
     You should have received a copy of the GNU General Public License
-    along with {{ cookiecutter.superproject }}; if not, write to the
-    Free Software Foundation, Inc., 59 Temple Place, Suite 330, Boston,
-    MA 02111-1307, USA.
+    along with {{ cookiecutter.superproject }}; if not, see `<http://www.gnu.org/licenses>`_.
 {%- if cookiecutter.copyright_by_intergovernmental | lower not in ['0', 'f', 'false', 'n', 'no'] %}
 
     In applying this license, {{ cookiecutter.copyright_holder }} does not
