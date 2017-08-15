@@ -29,16 +29,16 @@ WORKDIR=`mktemp -d`
 
 function finish {
     echo "Cleaning up."
-    pip uninstall ${WORKDIR}/invenio-fungenerator
+    pip uninstall -y generated_fun
     rm -rf ${WORKDIR}
 }
 
 trap finish EXIT
 
 sphinx-build -qnN docs docs/_build/html
-cookiecutter --no-input -o $WORKDIR .
+cookiecutter --no-input -o $WORKDIR . project_name=Generated-Fun
 
-cd ${WORKDIR}/invenio-fungenerator
+cd ${WORKDIR}/generated-fun
 
 git init
 git add -A
