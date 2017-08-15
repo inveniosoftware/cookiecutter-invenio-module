@@ -1,7 +1,7 @@
+#!/usr/bin/env bash
 # -*- coding: utf-8 -*-
 #
 # This file is part of Cookiecutter - Invenio Module Template
-# Copyright (C) 2015, 2016, 2017 CERN
 # Copyright (C) 2017 ETH Zurich, Swiss Data Science Center.
 #
 # Cookiecutter - Invenio Module Template is free software; you can
@@ -18,32 +18,33 @@
 # along with Cookiecutter - Invenio Module Template; if not, write to the
 # Free Software Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA
 # 02111-1307, USA.
-#
-# In applying this license, CERN does not waive the privileges and immunities
-# granted to it by virtue of its status as an Intergovernmental Organization
-# or submit itself to any jurisdiction.
 
-sudo: false
+# quit on errors:
+set -o errexit
 
-notifications:
-  email: false
+# quit on unbound symbols:
+set -o nounset
 
-language: python
+WORKDIR=`mktemp -d`
 
-matrix:
-  fast_finish: true
+function finish {
+    echo "Cleaning up."
+    pip uninstall ${WORKDIR}/invenio-fungenerator
+    rm -rf ${WORKDIR}
+}
 
-cache:
-  - pip
+trap finish EXIT
 
-python:
-  - "2.7"
-  - "3.5"
+sphinx-build -qnN docs docs/_build/html
+cookiecutter --no-input -o $WORKDIR .
 
-before_install:
-  - "travis_retry pip install --upgrade pip"
-  - "travis_retry pip install cookiecutter"
-  - "travis_retry pip install Sphinx>=1.4.2 sphinx_rtd_theme>=0.1.7"
+cd ${WORKDIR}/invenio-fungenerator
 
-script:
-  - "./run-tests.sh"
+git init
+git add -A
+
+pip install -e .[all] --quiet
+
+check-manifest -u || true
+
+./run-tests.sh
