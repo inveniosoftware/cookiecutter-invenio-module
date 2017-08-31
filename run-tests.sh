@@ -25,25 +25,25 @@ set -o errexit
 # quit on unbound symbols:
 set -o nounset
 
-WORKDIR=`mktemp -d`
+WORKDIR=$(mktemp -d)
 
 function finish {
     echo "Cleaning up."
     pip uninstall -y generated_fun
-    rm -rf ${WORKDIR}
+    rm -rf "${WORKDIR}"
 }
 
 trap finish EXIT
 
 sphinx-build -qnN docs docs/_build/html
-cookiecutter --no-input -o $WORKDIR . project_name=Generated-Fun
+cookiecutter --no-input -o "$WORKDIR" . project_name=Generated-Fun
 
-cd ${WORKDIR}/generated-fun
+cd "${WORKDIR}/generated-fun"
 
 git init
 git add -A
 
-pip install -e .[all] --quiet
+pip install -e .\[all\] --quiet
 
 check-manifest -u || true
 
