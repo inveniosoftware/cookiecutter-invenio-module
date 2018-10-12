@@ -1,6 +1,5 @@
 # -*- coding: utf-8 -*-
 #
-# Copyright (C) {{ cookiecutter.year }} {{ cookiecutter.copyright_holder }}.
+{{ '# Copyright (C) %s %s.'|format(cookiecutter.year, cookiecutter.copyright_holder)|wordwrap(width=77, wrapstring='\n# ')}}
 #
-# {{ cookiecutter.project_name }} is free software; you can redistribute it and/or modify it
-# under the terms of the MIT License; see LICENSE file for more details.
+{{ '# %s is free software; you can redistribute it and/or modify it under the terms of the MIT License; see LICENSE file for more details.'|format(cookiecutter.project_name)|wordwrap(width=77, wrapstring='\n# ')}}
