@@ -27,10 +27,8 @@ def test_init():
     assert '{{ cookiecutter.project_shortname}}' in app.extensions
 
 
-def test_view(app):
+def test_view(base_client):
     """Test view."""
-    {{ cookiecutter.extension_class}}(app)
-    with app.test_client() as client:
-        res = client.get("/")
-        assert res.status_code == 200
-        assert 'Welcome to {{ cookiecutter.project_name}}' in str(res.data)
+    res = base_client.get("/")
+    assert res.status_code == 200
+    assert 'Welcome to {{ cookiecutter.project_name}}' in str(res.data)

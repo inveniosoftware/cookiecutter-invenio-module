@@ -41,8 +41,10 @@ from flask import Flask
 from flask_babelex import Babel
 
 from {{ cookiecutter.package_name }} import {{ cookiecutter.extension_class }}
+from {{ cookiecutter.package_name }}.views import blueprint
 
 # Create Flask application
 app = Flask(__name__)
 Babel(app)
 {{ cookiecutter.extension_class }}(app)
+app.register_blueprint(blueprint)
