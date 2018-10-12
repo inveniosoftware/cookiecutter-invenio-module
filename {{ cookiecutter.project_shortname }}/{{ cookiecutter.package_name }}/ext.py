@@ -6,7 +6,6 @@ from __future__ import absolute_import, print_function
 from flask_babelex import gettext as _
 
 from . import config
-from .views import blueprint
 
 
 class {{ cookiecutter.extension_class }}(object):
@@ -24,7 +23,6 @@ class {{ cookiecutter.extension_class }}(object):
     def init_app(self, app):
         """Flask application initialization."""
         self.init_config(app)
-        app.register_blueprint(blueprint)
         app.extensions['{{ cookiecutter.project_shortname}}'] = self
 
     def init_config(self, app):

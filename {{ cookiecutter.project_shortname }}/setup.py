@@ -66,6 +66,9 @@ setup(
         'invenio_base.apps': [
             '{{ cookiecutter.package_name }} = {{ cookiecutter.package_name }}:{{ cookiecutter.extension_class }}',
         ],
+        'invenio_base.blueprints': [
+            '{{ cookiecutter.package_name }} = {{ cookiecutter.package_name }}.views:blueprint',
+        ],
         'invenio_i18n.translations': [
             'messages = {{ cookiecutter.package_name }}',
         ],
