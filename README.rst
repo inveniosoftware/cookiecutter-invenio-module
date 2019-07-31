@@ -1,15 +1,16 @@
+..
+    This file is part of Invenio.
+    Copyright (C) 2015-2019 CERN.
+
+    Invenio is free software; you can redistribute it and/or modify it
+    under the terms of the MIT License; see LICENSE file for more details.
+
 ======================================
 Cookiecutter - Invenio Module Template
 ======================================
 
 .. image:: https://img.shields.io/travis/inveniosoftware/cookiecutter-invenio-module.svg
         :target: https://travis-ci.org/inveniosoftware/cookiecutter-invenio-module
-
-.. image:: https://img.shields.io/github/tag/inveniosoftware/cookiecutter-invenio-module.svg
-        :target: https://github.com/inveniosoftware/cookiecutter-invenio-module/releases
-
-.. image:: https://img.shields.io/github/license/inveniosoftware/cookiecutter-invenio-module.svg
-        :target: https://github.com/inveniosoftware/cookiecutter-invenio-module/blob/master/LICENSE
 
 This `Cookiecutter <https://github.com/audreyr/cookiecutter>`_ template is
 designed to help you to bootstrap modules for `Invenio
