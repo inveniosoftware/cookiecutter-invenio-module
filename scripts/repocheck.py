@@ -46,11 +46,6 @@ manual_diff = [
     'setup.py',
     '.travis.yml',
     'tests/conftest.py',
-    'examples/app-fixtures.sh',
-    'examples/app-setup.sh',
-    'examples/app-teardown.sh',
-    'examples/app.py',
-    'tests/test_examples_app.py',
     'requirements-devel.txt',
 ]
 
