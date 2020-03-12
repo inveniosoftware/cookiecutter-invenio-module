@@ -4,8 +4,6 @@
 # TODO: This is an example file. Remove it if you do not need it, including
 # the templates and static folders as well as the test case.
 
-from __future__ import absolute_import, print_function
-
 from flask import Blueprint, render_template
 from flask_babelex import gettext as _
 

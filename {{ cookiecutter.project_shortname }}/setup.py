@@ -15,7 +15,7 @@ tests_require = [
     'pydocstyle>=2.0.0',
     'pytest-cov>=2.5.1',
     'pytest-pep8>=1.0.6',
-    'pytest-invenio>=1.0.5',
+    'pytest-invenio>=1.2.1',
 ]
 
 extras_require = {
@@ -35,7 +35,7 @@ setup_requires = [
 ]
 
 install_requires = [
-    'Flask-BabelEx>=0.9.3',
+    'Flask-BabelEx>=0.9.4',
 ]
 
 packages = find_packages()
@@ -95,10 +95,10 @@ setup(
         'Programming Language :: Python',
         'Topic :: Internet :: WWW/HTTP :: Dynamic Content',
         'Topic :: Software Development :: Libraries :: Python Modules',
-        'Programming Language :: Python :: 2',
-        'Programming Language :: Python :: 2.7',
         'Programming Language :: Python :: 3',
-        'Programming Language :: Python :: 3.5',
+        'Programming Language :: Python :: 3.6',
+        'Programming Language :: Python :: 3.7',
+        'Programming Language :: Python :: 3.8',
         'Development Status :: 1 - Planning',
     ],
 )

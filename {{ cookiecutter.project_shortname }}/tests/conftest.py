@@ -5,8 +5,6 @@ See https://pytest-invenio.readthedocs.io/ for documentation on which test
 fixtures are available.
 """
 
-from __future__ import absolute_import, print_function
-
 import shutil
 import tempfile
 

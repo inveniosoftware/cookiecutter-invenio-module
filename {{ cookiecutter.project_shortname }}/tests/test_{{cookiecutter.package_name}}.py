@@ -1,8 +1,6 @@
 {% include 'misc/header.py' %}
 """Module tests."""
 
-from __future__ import absolute_import, print_function
-
 from flask import Flask
 
 from {{ cookiecutter.package_name }} import {{ cookiecutter.extension_class }}
