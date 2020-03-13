@@ -19,7 +19,7 @@ blueprint = Blueprint(
 
 @blueprint.route("/")
 def index():
-    """Basic view."""
+    """Render a basic view."""
     return render_template(
         "{{ cookiecutter.package_name }}/index.html",
         module_name=_('{{ cookiecutter.project_name }}'))

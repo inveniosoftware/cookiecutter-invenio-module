@@ -6,11 +6,11 @@
     "description": "Invenio module that adds more fun to the platform.",
     "author_name": "CERN",
     "author_email": "info@inveniosoftware.org",
-    "year": "2017",
+    "year": "{% now 'local', '%Y' %}",
     "copyright_holder": "{{ cookiecutter.author_name }}",
     "copyright_by_intergovernmental": true,
     "superproject": "Invenio",
     "transifex_project": "{{ cookiecutter.project_shortname }}",
     "extension_class": "{{ cookiecutter.project_name | replace('-', '') | replace(' ', '') }}",
-    "config_prefix": "{{ cookiecutter.project_name | replace('Invenio-', '') | replace('-', '_') | upper }}"
+    "config_prefix": "{{ cookiecutter.project_name | replace('Invenio-', '') | replace(' ', '_') | replace('-', '_') | upper }}"
 }

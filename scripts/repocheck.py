@@ -13,10 +13,9 @@
 # warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 # GNU General Public License for more details.
 #
-# You should have received a copy of the GNU General Public License
-# along with Cookiecutter - Invenio Module Template; if not, write to the
-# Free Software Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA
-# 02111-1307, USA.
+# You should have received a copy of the GNU General Public License along with
+# Cookiecutter - Invenio Module Template; if not, see
+# <http://www.gnu.org/licenses>.
 #
 # In applying this license, CERN does not waive the privileges and immunities
 # granted to it by virtue of its status as an Intergovernmental Organization
@@ -47,11 +46,6 @@ manual_diff = [
     'setup.py',
     '.travis.yml',
     'tests/conftest.py',
-    'examples/app-fixtures.sh',
-    'examples/app-setup.sh',
-    'examples/app-teardown.sh',
-    'examples/app.py',
-    'tests/test_examples_app.py',
     'requirements-devel.txt',
 ]
 
