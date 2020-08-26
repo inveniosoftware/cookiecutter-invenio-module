@@ -1,4 +1,10 @@
 {% include 'misc/header.py' %}
+
+# blocklist
+branches:
+  except:
+  - /^v\d+\.\d+(\.\d+)?(\S*)?$/
+
 notifications:
   email: false
 
@@ -17,7 +23,7 @@ cache:
 
 env:
   - REQUIREMENTS=lowest
-  - REQUIREMENTS=release DEPLOY=true
+  - REQUIREMENTS=release
   - REQUIREMENTS=devel
 
 python:
@@ -42,15 +48,3 @@ script:
 
 after_success:
   - coveralls
-
-deploy:
-  provider: pypi
-  user: inveniosoftware
-  password:
-    secure: TODO:PYPISECUREHASH
-  distributions: "compile_catalog sdist bdist_wheel"
-  on:
-    tags: true
-    python: "3.8"
-    repo: {{ cookiecutter.github_repo }}
-    condition: $DEPLOY = true
