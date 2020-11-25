@@ -3,8 +3,8 @@
  {{ cookiecutter.project_name }}
 {{ '=' * (cookiecutter.project_name|length + 2) }}
 
-.. image:: https://img.shields.io/travis/{{ cookiecutter.github_repo }}.svg
-        :target: https://travis-ci.org/{{ cookiecutter.github_repo }}
+.. image:: https://github.com/{{ cookiecutter.github_repo }}/workflows/CI/badge.svg
+        :target: https://github.com/{{ cookiecutter.github_repo }}/actions?query=workflow%3ACI
 
 .. image:: https://img.shields.io/coveralls/{{ cookiecutter.github_repo }}.svg
         :target: https://coveralls.io/r/{{ cookiecutter.github_repo }}
