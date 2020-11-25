@@ -1,3 +1,4 @@
+{% raw -%}
 name: CI
 
 on:
@@ -90,3 +91,4 @@ jobs:
         # Remove `.travis-*` and add `.*-requirements.txt`
         run: |
           ./run-tests.sh
+{%- endraw %}
