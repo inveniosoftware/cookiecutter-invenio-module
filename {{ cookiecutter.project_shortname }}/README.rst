@@ -6,9 +6,6 @@
 .. image:: https://github.com/{{ cookiecutter.github_repo }}/workflows/CI/badge.svg
         :target: https://github.com/{{ cookiecutter.github_repo }}/actions?query=workflow%3ACI
 
-.. image:: https://img.shields.io/coveralls/{{ cookiecutter.github_repo }}.svg
-        :target: https://coveralls.io/r/{{ cookiecutter.github_repo }}
-
 .. image:: https://img.shields.io/github/tag/{{ cookiecutter.github_repo }}.svg
         :target: https://github.com/{{ cookiecutter.github_repo }}/releases
 
