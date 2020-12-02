@@ -43,8 +43,9 @@ from os.path import join
 import click
 
 manual_diff = [
+    '.github/workflows/tests.yml',
+    '.github/workflows/pypi-publish.yml',
     'setup.py',
-    '.travis.yml',
     'tests/conftest.py',
     'requirements-devel.txt',
 ]
