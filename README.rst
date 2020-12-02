@@ -2,8 +2,8 @@
 Cookiecutter - Invenio Module Template
 ======================================
 
-.. image:: https://img.shields.io/travis/inveniosoftware/cookiecutter-invenio-module.svg
-        :target: https://travis-ci.org/inveniosoftware/cookiecutter-invenio-module
+.. image:: https://github.com/inveniosoftware/cookiecutter-invenio-module/workflows/CI/badge.svg
+        :target: https://github.com/inveniosoftware/cookiecutter-invenio-module/actions?query=workflow%3ACI
 
 .. image:: https://img.shields.io/github/license/inveniosoftware/cookiecutter-invenio-module.svg
         :target: https://github.com/inveniosoftware/cookiecutter-invenio-module/blob/master/LICENSE
@@ -26,9 +26,7 @@ features:
   <http://sphinx-doc.org/>`_. Also includes all files required for `Read the
   Docs <https://readthedocs.io/>`_. Mocking module to simulate not-installed
   requirements for faster documentation building.
-- **Continuous integration:** Support for `Travis <https://travis-ci.org/>`_
-  which tests all three requirement levels and adds coverage tests using
-  `Coveralls <https://coveralls.io/>`_.
+- **Continuous integration:** Support for `GitHub Actions <https://github.com/features/actions>`_.
 - **Your toolchain:** Ignores a decent set of files when working with GIT and
   `Docker <https://www.docker.com/>`_. Gets your editor to adapt project
   guidelines by providing a `EditorConfig <http://editorconfig.org/>`_ file.
