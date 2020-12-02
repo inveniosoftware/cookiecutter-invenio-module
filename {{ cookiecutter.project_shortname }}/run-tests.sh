@@ -1,14 +1,26 @@
 #!/usr/bin/env sh
 {% include 'misc/header.py' %}
 
-# TODO: Pass the services required by your module to the
-# docker-services-cli e.g. `docker-services-cli up es postgresql redis`
-# remove docker-services-cli if you don't need any of the services.
-docker-services-cli up && \
-python -m check_manifest --ignore ".travis-*" && \
-python -m sphinx.cmd.build -qnNW docs docs/_build/html && \
+# Usage:
+#   env DB=postgresql12 ES=es7 CACHE=redis MQ=rabbitmq ./run-tests.sh
+
+# Quit on errors
+set -o errexit
+
+# Quit on unbound symbols
+ set -o nounset
+
+# Always bring down docker services
+function cleanup {
+    docker-services-cli down
+}
+trap cleanup EXIT
+
+python -m check_manifest --ignore ".travis-*"
+python -m sphinx.cmd.build -qnNW docs docs/_build/html
+# TODO: Remove services below that are not neeed (fix also the usage note).
+docker-services-cli up ${DB} ${ES:-es} ${CACHE:-redis} ${MQ:-rabbitmq}
 python -m pytest
-python -m sphinx.cmd.build -qnNW -b doctest docs docs/_build/doctest
 tests_exit_code=$?
-docker-services-cli down
+python -m sphinx.cmd.build -qnNW -b doctest docs docs/_build/doctest
 exit "$tests_exit_code"
