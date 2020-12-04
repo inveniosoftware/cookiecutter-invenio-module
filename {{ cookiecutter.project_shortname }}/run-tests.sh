@@ -16,10 +16,10 @@ function cleanup {
 }
 trap cleanup EXIT
 
-python -m check_manifest --ignore ".travis-*"
+python -m check_manifest --ignore ".*-requirements.txt"
 python -m sphinx.cmd.build -qnNW docs docs/_build/html
 # TODO: Remove services below that are not neeed (fix also the usage note).
-docker-services-cli up ${DB} ${ES:-es} ${CACHE:-redis} ${MQ:-rabbitmq}
+docker-services-cli up ${DB:-} ${ES:-es} ${CACHE:-redis} ${MQ:-rabbitmq}
 python -m pytest
 tests_exit_code=$?
 python -m sphinx.cmd.build -qnNW -b doctest docs docs/_build/doctest
