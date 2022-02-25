@@ -25,25 +25,28 @@ jobs:
           # a new item to the following lists.
           # You can see the complete list of services and versions that are available at:
           # https://docker-services-cli.readthedocs.io/en/latest/configuration.html
-          python-version: [3.6, 3.7, 3.8, 3.9]
+          python-version: [3.7, 3.8, 3.9, "3.10"]
           requirements-level: [min, pypi]
           cache-service: [redis]
-          db-service: [postgresql9, postgresql11, mysql5, mysql8]
+          db-service: [postgresql10, postgresql13, mysql5, mysql8]
           mq-service: [rabbitmq, redis]
-          search-service: [elasticsearch6, elasticsearch7]
+          search-service: [elasticsearch7]
 
           exclude:
           # Add combinations to this list that should be excluded from the final
           # build. Doing this will help keeping the number of jobs down.
-          # E.g. removing 3.8 - min combination will avoid 8 jobs to be submited
-          # [3.8] * [min] * [postgresql9, postgresql11, mysql5, mysql8] * [elasticsearch6, elasticsearch7]
+          # E.g. removing 3.8 - min combination will avoid 5 jobs to be submited
+          # [3.8] * [min] * [postgresql10, postgresql13, mysql5, mysql8] * [elasticsearch6]
           - python-version: 3.8
             requirements-level: min
 
           - python-version: 3.9
             requirements-level: min
 
-          - db-service: postgresql11
+          - python-version: "3.10"
+            requirements-level: min
+
+          - db-service: postgresql13
             python-version: 3.6
 
           - db-service: mysql8
@@ -53,22 +56,22 @@ jobs:
             python-version: 3.6
 
           - search-service: elasticsearch6
-            db-service: postgresql11
+            db-service: postgresql13
 
           - search-service: elasticsearch6
             db-service: mysql8
 
           - search-service: elasticsearch7
-            db-service: postgresql9
+            db-service: postgresql10
 
           - search-service: elasticsearch7
             db-service: mysql5
 
           include:
-          - db-service: postgresql9
+          - db-service: postgresql10
             DB_EXTRAS: "postgresql"
 
-          - db-service: postgresql11
+          - db-service: postgresql13
             DB_EXTRAS: "postgresql"
 
           - db-service: mysql5
@@ -76,9 +79,6 @@ jobs:
 
           - db-service: mysql8
             DB_EXTRAS: "mysql"
-
-          - search-service: elasticsearch6
-            SEARCH_EXTRAS: "elasticsearch6"
 
           - search-service: elasticsearch7
             SEARCH_EXTRAS: "elasticsearch7"
@@ -89,7 +89,7 @@ jobs:
       MQ: ${{ matrix.mq-service }}
       SEARCH: ${{ matrix.search-service }}
       # TODO: Adapt EXTRAS accordingly
-      EXTRAS: all${{ join( [matrix.DB_EXTRAS, matrix.SEARCH_EXTRAS], ',' ) }}
+      EXTRAS: tests${{ join( [matrix.DB_EXTRAS, matrix.SEARCH_EXTRAS], ',' ) }}
 
     steps:
       - name: Checkout
