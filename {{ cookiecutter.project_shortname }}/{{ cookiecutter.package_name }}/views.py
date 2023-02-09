@@ -1,5 +1,5 @@
 {% include 'misc/header.py' %}
-"""{{ cookiecutter.description }}"""
+"""{{ cookiecutter.description }}."""
 
 # TODO: This is an example file. Remove it if you do not need it, including
 # the templates and static folders as well as the test case.
@@ -8,10 +8,10 @@ from flask import Blueprint, render_template
 from flask_babelex import gettext as _
 
 blueprint = Blueprint(
-    '{{ cookiecutter.package_name }}',
+    "{{ cookiecutter.package_name }}",
     __name__,
-    template_folder='templates',
-    static_folder='static',
+    template_folder="templates",
+    static_folder="static",
 )
 
 
@@ -20,4 +20,5 @@ def index():
     """Render a basic view."""
     return render_template(
         "{{ cookiecutter.package_name }}/index.html",
-        module_name=_('{{ cookiecutter.project_name }}'))
+        module_name=_("{{ cookiecutter.project_name }}"),
+    )

@@ -5,34 +5,19 @@ See https://pytest-invenio.readthedocs.io/ for documentation on which test
 fixtures are available.
 """
 
-import shutil
-import tempfile
-
 import pytest
-from flask import Flask
-from flask_babelex import Babel
-
-from {{ cookiecutter.package_name }} import {{ cookiecutter.extension_class }}
-from {{ cookiecutter.package_name }}.views import blueprint
+from invenio_app.factory import create_app as _create_app
 
 
-@pytest.fixture(scope='module')
-def celery_config():
-    """Override pytest-invenio fixture.
+@pytest.fixture(scope="module")
+def app_config(app_config):
+    """Application config override."""
+    # TODO: Override any necessary config values for tests
+    app_config["{{ cookiecutter.config_prefix }}_DEFAULT_VALUE"] = "test-foobar"
+    return app_config
 
-    TODO: Remove this fixture if you add Celery support.
-    """
-    return {}
 
-
-@pytest.fixture(scope='module')
+@pytest.fixture(scope="module")
 def create_app(instance_path):
     """Application factory fixture."""
-    def factory(**config):
-        app = Flask('testapp', instance_path=instance_path)
-        app.config.update(**config)
-        Babel(app)
-        {{ cookiecutter.extension_class }}(app)
-        app.register_blueprint(blueprint)
-        return app
-    return factory
+    return _create_app

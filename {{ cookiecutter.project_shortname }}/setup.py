@@ -1,5 +1,6 @@
 {% include 'misc/header.py' %}
-"""{{ cookiecutter.description }}"""
+"""{{ cookiecutter.description }}."""
 
-from setuptools import find_packages, setup
+from setuptools import setup
+
 setup()
