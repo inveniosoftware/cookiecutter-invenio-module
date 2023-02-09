@@ -3,7 +3,7 @@
     "project_shortname": "{{ cookiecutter.project_name | lower | replace(' ', '-') }}",
     "package_name": "{{ cookiecutter.project_shortname | replace('-', '_') }}",
     "github_repo": "inveniosoftware/{{ cookiecutter.project_shortname  }}",
-    "description": "Invenio module that adds more fun to the platform.",
+    "description": "Invenio module that adds more fun to the platform",
     "author_name": "CERN",
     "author_email": "info@inveniosoftware.org",
     "year": "{% now 'local', '%Y' %}",

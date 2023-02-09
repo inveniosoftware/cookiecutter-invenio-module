@@ -1,3 +1,7 @@
+{% include "misc/header.py" %}
+
+name: Publish
+
 on:
   push:
     tags:
