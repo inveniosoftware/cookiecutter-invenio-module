@@ -1,7 +1,7 @@
 {% include 'misc/header.py' %}
 """{{ cookiecutter.description }}."""
 
-from flask_babel import gettext as _
+from invenio_i18n import gettext as _
 
 from . import config
 

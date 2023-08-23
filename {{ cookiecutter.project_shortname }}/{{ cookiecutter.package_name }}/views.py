@@ -5,7 +5,7 @@
 # the templates and static folders as well as the test case.
 
 from flask import Blueprint, render_template
-from flask_babel import gettext as _
+from invenio_i18n import gettext as _
 
 blueprint = Blueprint(
     "{{ cookiecutter.package_name }}",
