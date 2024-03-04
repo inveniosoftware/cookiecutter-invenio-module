@@ -31,7 +31,7 @@ cd "${WORKDIR}/generated-fun"
 git init
 git add -A
 
-pip install -e .\[all\] --quiet
+pip install -e .\[tests,opensearch2\] --quiet
 
 mkdir generated_fun/translations
 python setup.py extract_messages
