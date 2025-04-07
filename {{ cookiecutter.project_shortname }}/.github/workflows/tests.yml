@@ -5,14 +5,16 @@ name: CI
 
 on:
   push:
-    branches: master
+    branches:
+      - master
+      - "maint-**"
   pull_request:
     branches:
       - master
       - "maint-**"
   schedule:
     # * is a special character in YAML so you have to quote this string
-    - cron:  "0 3 * * 6"
+    - cron: "0 3 * * 6"
   workflow_dispatch:
     inputs:
       reason:
@@ -21,48 +23,12 @@ on:
         default: "Manual trigger"
 
 jobs:
-  Tests:
-    runs-on: ubuntu-20.04
-    strategy:
-      matrix:
-        # TODO: You can add/remove combinations e.g. `dev` requirements or
-        # `postgresql13` by adding a new item to the following lists.
-        # You can see the complete list of services and versions that are available at:
-        # https://docker-services-cli.readthedocs.io/en/latest/configuration.html
-        python-version: ['3.9', '3.12']
-        db-service: [postgresql14]
-        search-service: [opensearch2]
-        include:
-          - db-service: postgresql14
-            DB_EXTRAS: "postgresql"
-
-          - search-service: opensearch2
-            SEARCH_EXTRAS: "opensearch2"
-
-    env:
-      DB: ${{ matrix.db-service }}
-      SEARCH: ${{ matrix.search-service }}
-      # TODO: Adapt EXTRAS accordingly
-      EXTRAS: tests,${{ matrix.search-service }}
-
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-
-      - name: Set up Python ${{ matrix.python-version }}
-        uses: actions/setup-python@v5
-        with:
-          python-version: ${{ matrix.python-version }}
-          cache: pip
-          cache-dependency-path: setup.cfg
-
-      - name: Install dependencies
-        run: |
-          pip install ".[$EXTRAS]"
-          pip freeze
-          docker --version
-          docker-compose --version
-
-      - name: Run tests
-        run: ./run-tests.sh
+  Python:
+      uses: inveniosoftware/workflows/.github/workflows/tests-python.yml@master
+      with:
+        extras: "tests"
+  JS:
+    uses: inveniosoftware/workflows/.github/workflows/tests-js.yml@master
+    with:
+      translations-working-directory: {{ cookiecutter.project_shortname }}/assets/semantic-ui/translations/{{ cookiecutter.project_shortname }}
 {%- endraw %}
