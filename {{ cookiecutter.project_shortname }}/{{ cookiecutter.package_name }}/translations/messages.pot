@@ -1,0 +1,1 @@
+# Translations template for {{ cookiecutter.package_name }}
