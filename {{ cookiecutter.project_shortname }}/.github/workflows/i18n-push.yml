@@ -1,0 +1,13 @@
+{% include "misc/header.py" %}
+
+{% raw -%}
+name: i18n:push translations
+on: workflow_dispatch # manually trigger
+
+jobs:
+  i18n-extract:
+    uses: inveniosoftware/invenio-i18n/.github/workflows/i18n-push-base.yml@master
+    with:
+      extract-backend: true
+    secrets: inherit
+{%- endraw %}
