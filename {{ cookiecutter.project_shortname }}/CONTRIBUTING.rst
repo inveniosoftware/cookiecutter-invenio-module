@@ -54,6 +54,8 @@ Get Started!
 ------------
 
 Ready to contribute? Here's how to set up `{{ cookiecutter.project_shortname }}` for local development.
+The steps use the [`uv`](https://docs.astral.sh/uv/) tool but the equivalent with
+pipenv or other tools is perfectly fine as well.
 
 1. Fork the `{{ cookiecutter.github_repo }}` repo on GitHub.
 2. Clone your fork locally:
@@ -62,15 +64,13 @@ Ready to contribute? Here's how to set up `{{ cookiecutter.project_shortname }}`
 
       $ git clone git@github.com:your_name_here/{{ cookiecutter.project_shortname }}.git
 
-3. Install your local copy into a virtualenv. Assuming you have
-   virtualenvwrapper installed, this is how you set up your fork for local
-   development:
+3. Install your local copy into a virtualenv:
 
    .. code-block:: console
 
-      $ mkvirtualenv {{ cookiecutter.project_shortname }}
       $ cd {{ cookiecutter.project_shortname }}/
-      $ pip install -e .[all]
+      $ uv venv
+      $ uv pip install -e .[all]
 
 4. Create a branch for local development:
 
@@ -84,7 +84,7 @@ Ready to contribute? Here's how to set up `{{ cookiecutter.project_shortname }}`
 
    .. code-block:: console
 
-      $ ./run-tests.sh
+      $ uv run ./run-tests.sh
 
    The tests will provide you with test coverage and also check PEP8
    (code style), PEP257 (documentation), flake8 as well as build the Sphinx
@@ -113,6 +113,6 @@ Before you submit a pull request, check that it meets these guidelines:
 1. The pull request should include tests and must not decrease test coverage.
 2. If the pull request adds functionality, the docs should be updated. Put
    your new functionality into a function with a docstring.
-3. The pull request should work for Python 3.6, 3.7, 3.8 and 3.9. Check
-   https://github.com/inveniosoftware/{{ cookiecutter.github_repo }}/actions?query=event%3Apull_request
+3. The pull request should work for all Python versions currently supported by Invenio. Check
+   https://github.com/{{ cookiecutter.github_repo }}/actions?query=event%3Apull_request
    and make sure that the tests pass for all supported Python versions.
