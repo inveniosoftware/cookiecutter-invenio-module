@@ -18,8 +18,7 @@ features:
 - **Boilderplate files:** `README` including important badges, `AUTHORS` and
   `CHANGES` file.
 - **License:** `MIT <https://opensource.org/licenses/MIT>`_ file and headers.
-- **Installation:** Installation script written as `setup.py` and a
-  requirements calculator for different levels (`min`, `pypi`, `dev`).
+- **Installation:** Installation scripts via `setup.py` and `setup.cfg`.
 - **Tests:** Test setup using `pytest <http://pytest.org/latest/>`_ and
   configuration for `Tox <https://tox.readthedocs.io/en/latest/>`_.
 - **Documentation:** Documentation generator using `Sphinx
