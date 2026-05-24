@@ -1,4 +1,6 @@
 #!/usr/bin/env bash
+# SPDX-FileCopyrightText: 2015-2023 CERN.
+# SPDX-License-Identifier: MIT
 
 echo "-------------------------------------------------------------------------------"
 echo
