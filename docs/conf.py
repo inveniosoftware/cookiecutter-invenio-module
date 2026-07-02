@@ -1,9 +1,8 @@
 # SPDX-FileCopyrightText: 2023 CERN.
 # SPDX-License-Identifier: MIT
 
-import sys
 import os
-import shlex
+import sys
 
 # If extensions (or modules to document with autodoc) are in another directory,
 # add these directories to sys.path here. If the directory is relative to the
