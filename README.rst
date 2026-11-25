@@ -15,7 +15,7 @@ features:
 
 - **Python package:** Python package for your module including `version`
   submodule.
-- **Boilderplate files:** `README` including important badges, `AUTHORS` and
+- **Boilerplate files:** `README` including important badges, `AUTHORS` and
   `CHANGES` file.
 - **License:** `MIT <https://opensource.org/licenses/MIT>`_ file and headers.
 - **Installation:** Installation scripts via `setup.py` and `setup.cfg`.
@@ -28,7 +28,7 @@ features:
 - **Continuous integration:** Support for `GitHub Actions <https://github.com/features/actions>`_.
 - **Your toolchain:** Ignores a decent set of files when working with GIT and
   `Docker <https://www.docker.com/>`_. Gets your editor to adapt project
-  guidelines by providing a `EditorConfig <http://editorconfig.org/>`_ file.
+  guidelines by providing an `EditorConfig <http://editorconfig.org/>`_ file.
 
 Configuration
 -------------
